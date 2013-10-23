@@ -1,13 +1,18 @@
 CC=gcc
-FLAGS= -I./
+CFLAGS= -I./include/
 LDFLAGS=
+SUBDIR=sort
+# source code file *.c
+sources = $(wildcard util/*.c) $(wildcard sort/*.c)
 
-objects=sort.o main.o
-all : $(objects)
-	$(CC) $(FLAGS) -o main $(objects)
-main.o : main.c
-	$(CC)	-c main.c
-sort.o : sort.c sort.h
-	$(CC)	-c $(FLAGS)	sort.c
+sources += $(wildcard ./*.c)
+objs = $(sources:%.c=%.o)
+target = main
+
+all : $(target)
+$(target): $(objs)
+	$(CC) -o $(target) $(objs)
+
+.PHONY : clean
 clean:
-	rm main $(objects)
+	-$(RM) $(target) $(objs)

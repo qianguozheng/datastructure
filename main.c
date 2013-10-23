@@ -7,15 +7,6 @@
 #include <stdlib.h>
 #include "sort.h"
 
-void print(int *arr, int size)
-{
-	int i = 0;
-	for (i = 0; i<size; i++)
-	{
-		printf("%d ", arr[i]);
-	}
-	printf("\n");
-}
 int main(int argc, char *argv[])
 {
 	int arr[10] = {0, 10, 9, 7, 2, 6, 4, 5, 3, 8};
