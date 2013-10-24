@@ -9,7 +9,7 @@
 
 int main(int argc, char *argv[])
 {
-	int arr[10] = {0, 10, 9, 7, 2, 6, 4, 5, 3, 8};
+	int arr[10] = {5, 10, 9, 7, 2, 6, 4, 5, 3, 8};
 	printf ("before sort arr:\n");
 	print(arr, 10);
 	//bubble(arr, 10);

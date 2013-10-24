@@ -16,11 +16,9 @@ int swap(int *a, int *b)
 {
 	int temp = 0;
 
-	if (*a > *b)
-	{
-		temp = *a;
-		*a = *b;
-		*b = temp; 
-	}
+	temp = *a;
+	*a = *b;
+	*b = temp; 
+	
 	return 0;
 }

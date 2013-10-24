@@ -23,6 +23,7 @@ int bubble(int *arr, int size)
 	return 0;
 }
 // heap sort algorithm
+// refer to: sina blog Better Linux, better me
 static int adjust_heap(int *arr, int i, int size)
 {
 	int lchild = 2*i;
@@ -31,11 +32,11 @@ static int adjust_heap(int *arr, int i, int size)
 	
 	if (i <= size/2)
 	{
-		if (lchild <= size && arr[lchild] > arr[max])
+		if (lchild < size && arr[lchild] > arr[max])
 		{
 			max = lchild;
 		}
-		if (rchild <= size && arr[rchild] > arr[max])
+		if (rchild < size && arr[rchild] > arr[max])
 		{
 			max = rchild;
 		}
@@ -49,7 +50,7 @@ static int adjust_heap(int *arr, int i, int size)
 static int build_heap(int *arr, int size)
 {
 	int k = 0;
-	for (k = size/2; k >=1; k--)
+	for (k = size/2; k >=0; k--)
 	{
 		adjust_heap(arr, k, size);
 	}
@@ -59,9 +60,9 @@ int heapsort(int *arr, int size)
 {
 	int i;
 	build_heap(arr, size);
-	for (i = size; i>=1; i--)
+	for (i = size-1; i>=0; i--)
 	{
-		swap(&arr[1], &arr[i]);
-		adjust_heap(arr, 1, i-1);
+		swap(&arr[0], &arr[i]);
+		adjust_heap(arr, 0, i);
 	}
 }
