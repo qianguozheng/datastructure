@@ -1,6 +1,14 @@
 #include "base64.h"
 #include <stdio.h>
 
+/**
+*http://www.cnblogs.com/syxchina/archive/2010/07/25/2197388.html
+* 可以对比下这两个函数的执行效率-都是base64
+* http://www.cnblogs.com/yejianfei/archive/2013/04/06/3002838.html
+* 应该是效率最高的--都是移位运算
+* http://blog.chinaunix.net/uid-20662820-id-142430.html
+*/
+
 const char base[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
 static char find_pos(char ch)
 {

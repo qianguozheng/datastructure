@@ -3,6 +3,6 @@
 #include <stdio.h>
 
 int bubble(int *arr, int size);
-int heapsort(int *arr, int size);
+int heap_sort(int *arr, int size);
 
 #endif
