@@ -1,5 +1,8 @@
 datastructure
 =============
+### 2015-6-25
+- Add state design pattern sample.
+- Add strategy design pattern sample.
 ### 2015-6-6
 - Add openssl RSA keypair generate test code.
 - Add base64 normal generate code.
