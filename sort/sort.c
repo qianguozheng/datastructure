@@ -56,7 +56,7 @@ static int build_heap(int *arr, int size)
 	}
 	return 0;
 }
-int heapsort(int *arr, int size)
+int heap_sort(int *arr, int size)
 {
 	int i;
 	build_heap(arr, size);
