@@ -32,5 +32,5 @@ int detect_process(char *process_name)
 
 int main(int argc, char *argv[])
 {   
-    printf("%d\n", detect_process("polipo"));   
+    printf("%d\n", detect_process("polipox"));   
 }
