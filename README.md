@@ -16,3 +16,7 @@ datastructure
 
 ### Long time ago
 - A set of sort algorithm, and linklist, tree and other data structure.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/qianguozheng/datastructure/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
