@@ -1,0 +1,8 @@
+config CONFIG_FILTER_STRING
+	tristate "Filter String in Kernel Netfilter module"
+	depends on 
+	select m
+	help
+	  This is the kernel module to filter kernel string.
+
+	  This support is also available as a module.  By @Richard(richard@focalcrest.com)

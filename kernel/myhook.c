@@ -27,6 +27,8 @@ MODULE_DESCRIPTION("My hook test");
 unsigned char   SMAC[ETH_ALEN] = {0x00,0x0C,0x29,0x33,0x2C,0x3C}; //network device MAC addr
 unsigned char   DMAC[ETH_ALEN] = {0x00,0x50,0x56,0xF4,0x8B,0xB3}; //default gateway MAC addr
 
+
+
 static int build_and_xmit_udp(char * eth, u_char * smac, u_char * dmac,
 							 u_char * pkt, int pkt_len,u_long sip, u_long dip,
 							 u_short sport, u_short dport)
@@ -135,12 +137,17 @@ static struct nf_hook_ops nfho={
 
 static int __init myhook_init(void)
 {
-    return nf_register_hook(&nfho);
+	unsigned char value;
+	value =0xff;
+	
+	rt_i2c_read(0x50, 0x00, &value, 1);
+	prink("%d", value);
+    return 0;//nf_register_hook(&nfho);
 }
 
 static void __exit myhook_fini(void)
 {
-    nf_unregister_hook(&nfho);
+    //nf_unregister_hook(&nfho);
 }
 
 module_init(myhook_init);

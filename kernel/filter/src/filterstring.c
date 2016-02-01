@@ -9,7 +9,82 @@
 #define DRIVER_AUTHOR "AlexKey"
 #define DRIVER_DESC "HTTP packets manipulations"
 
-#define DEBUG 1
+#define DEBUG 0
+
+#include <linux/module.h>
+#include <linux/proc_fs.h>
+#include <linux/seq_file.h>
+#include <asm/uaccess.h>
+#include <linux/slab.h>
+#include <linux/string.h>
+static char *buffer = NULL;
+static char *urlstr = NULL;
+
+struct ts_config *conf;
+struct ts_state state;
+
+static int hello_proc_show(struct seq_file *m, void *v) {
+  seq_printf(m, "Hello proc!\n");
+  seq_printf(m, "buffer=%s\n", buffer);
+  int i = 0;
+  
+//  if (buffer != NULL)
+//  {  
+//    if (buffer[0] == 's')
+//    {
+//      for (i = 0; i < 10; i++)
+//        seq_printf(m, "i = %d\n", i);
+//    }
+//  }
+  return 0;
+}
+
+static ssize_t hello_proc_write(struct file *file, const char *buffer, size_t len,
+  loff_t *off)
+{
+  int user_len = 0;
+  
+  user_len = len;
+  if (buffer) kfree(buffer);
+  buffer = (char *)kmalloc(user_len+1, GFP_KERNEL);
+  memset(buffer, 0, user_len + 1);
+  if (copy_from_user(buffer, buffer, user_len))
+  {
+    printk( "hello_proc error\n");
+    return -EFAULT;
+  }
+  
+  if (user_len > 0)
+  {
+	  if(0 == strncmp(buffer, "URL=", strlen("URL=")))
+	  {
+		  if (urlstr) kfree(urlstr);
+		  urlstr = (char *)kmalloc(user_len-strlen("URL=")+1, GFP_KERNEL);
+		  memset(urlstr, 0, user_len-strlen("URL=")+1);
+		  
+		  memcpy(urlstr, buffer+strlen("URL="), user_len-strlen("URL="));
+		  
+		  conf = textsearch_prepare("kmp", urlstr, strlen(urlstr),
+                            GFP_KERNEL, TS_AUTOLOAD);
+	  }
+  }
+  printk( "userlen=%d\n", user_len);
+  return user_len;
+}
+
+static int hello_proc_open(struct inode *inode, struct  file *file) {
+  return single_open(file, hello_proc_show, NULL);
+}
+  
+static const struct file_operations hello_proc_fops = {
+  .owner = THIS_MODULE,
+  .open = hello_proc_open,
+  .read = seq_read,
+  .write = hello_proc_write,
+  .llseek = seq_lseek,
+  .release = single_release,
+};
+
 
 static struct nf_hook_ops nfho;
 
@@ -22,11 +97,11 @@ static unsigned int hook_func(unsigned int hooknum, struct sk_buff *skb, const s
     u16 source, dest;
     int i = 0;
     int found = 0;
-    struct ts_config *conf;
-    struct ts_state state;
-    const char *pattern = "GET / HTTP/1.1";
-    conf = textsearch_prepare("kmp", pattern, strlen(pattern),
-                                GFP_KERNEL, TS_AUTOLOAD);
+    //struct ts_config *conf;
+    //struct ts_state state;
+    //const char *pattern = "GET / HTTP/1.1";
+    //conf = textsearch_prepare("kmp", pattern, strlen(pattern),
+    //                            GFP_KERNEL, TS_AUTOLOAD);
     if (IS_ERR(conf))
     {
         //err = PTR_ERR(conf);
@@ -155,6 +230,7 @@ static int __init init_main(void) {
 #if DEBUG > 0
     printk(KERN_INFO "[HTTP] Successfully inserted protocol module into kernel.\n");
 #endif
+	proc_create("urlfilter", 0666, NULL, &hello_proc_fops);
     return 0;
 }
 
@@ -163,6 +239,11 @@ static void __exit cleanup_main(void) {
 #if DEBUG > 0
     printk(KERN_INFO "[HTTP] Successfully unloaded protocol module.\n");
 #endif
+	if (buffer)
+		kfree(buffer);
+	if (urlstr)
+		kfree(urlstr);
+	remove_proc_entry("urlfilter", NULL);
 }
 
 module_init(init_main);
@@ -171,3 +252,4 @@ module_exit(cleanup_main);
 MODULE_LICENSE("GPL v3");
 MODULE_AUTHOR(DRIVER_AUTHOR);
 MODULE_DESCRIPTION(DRIVER_DESC);
+
