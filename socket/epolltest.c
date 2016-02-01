@@ -3,6 +3,7 @@
  */
 
 //http://blog.csdn.net/mmz_xiaokong/article/details/8704988
+//https://banu.com/blog/2/how-to-use-epoll-a-complete-example-in-c/epoll-example.c
 
 #include <stdio.h>
 #include <stdlib.h>
