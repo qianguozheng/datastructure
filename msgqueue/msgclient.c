@@ -26,7 +26,7 @@ int main(int argc,char **argv)
 		exit(1);  
 	}  
 
-	if((key=ftok("/tmp/",'m'))==-1)  
+	if((key=ftok("/tinyproxy/",'C'))==-1)  
 	{  
 		fprintf(stderr,"Creat Key Error：%s\a\n",strerror(errno));  
 		exit(1);  
@@ -46,9 +46,9 @@ int main(int argc,char **argv)
 	{
 	   printf("%s(%d): rc=%d\n", __FUNCTION__, __LINE__, rc);
 	}
-	memset(&msg,'\0',sizeof(struct msgtype));  
-	msgrcv(msgid,&msg,sizeof(struct msgtype),msg.mtype,0);
-	printf("Receive messge=%s\n", msg.buffer);
+	//memset(&msg,'\0',sizeof(struct msgtype));  
+	//msgrcv(msgid,&msg,sizeof(struct msgtype),msg.mtype,0);
+	/*printf("Receive messge=%s\n", msg.buffer);
 	if (rc < 0)
 	{
 	   printf("%s(%d): rc=%d\n", __FUNCTION__, __LINE__, rc);
@@ -59,7 +59,7 @@ int main(int argc,char **argv)
 	if (rc < 0)
 	{
 	   printf("%s(%d): rc=%d\n", __FUNCTION__, __LINE__, rc);
-	}
+	}*/
 	
 	return 0;
 }

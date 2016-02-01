@@ -1,0 +1,256 @@
+v2.23 - Updated for Linux 2.6.35 and up.  New API changes were
+introduced in the Kernel release 2.6.35 and some (specifically
+to xt_match struct found in linux/netfilter/x_tables.h), affected
+l7-filter.  Patch by Huascar Tejeda.
+
+
+v2.22 - Updated for iptables 1.4.3 and 1.4.4.  Organized files for older 
+iptables releases using a similar system as the kernel patches.
+
+
+v2.21 - Updated for Linux 2.6.27 and 2.6.28.  Removed #if 
+LINUX_VERSION_CODE statements that can't ever be true because of how 
+these patches are organized.
+
+
+v2.20 - Cleaned iptables files.  For iptables 1.4.1.1 forward, removed 
+.layer7-test, fixed help text, conformed to current negation convention 
+('!' flag goes before options rather than between option and argument), 
+and so forth.  Now distributing xt_layer7.{c,man} as individual files 
+rather than a patch.  No change to kernel patches.
+
+
+v2.19 - Update iptables patch for iptables 1.4.1.1.  Note that iptables 
+now uses a different compile procedure.  Corrected MODULE_VERSION 
+numbers on all kernel patches.
+
+
+v2.18 - Updated 2.6 patch for 2.6.25.  Removed a stray "asdf" from 
+2.6.22-2.6.24 patch.
+
+
+v2.17 - Updated 2.6 patch for 2.6.24.
+
+
+v2.16.1 - Fixed and expanded documentation here and in README.
+
+
+v2.16 - iptables patch: Added a patch that works with iptables 1.4.0rc1.
+
+
+v2.15 - 2.6 patches: Added /proc/net/ip_conntrack code in the new place that 
+it has to be for Linux 2.6.20 and up.  Tested with 2.6.20.8, 2.6.21.1, 
+2.6.22-rc7 and 2.6.23.1.
+
+
+v2.14 - 2.6 patches: Added missing dependency (NF_CT_ACCT) and fixed 
+Makefile in 2.6.20-21 and 2.6.22.
+
+
+v2.13 - 2.6 patch: Fixed compiler error on 64 bit platforms.
+
+
+v2.12.1 - Fixed documentation on iptables patch to reflect correct kernel 
+version boundary.
+
+
+v2.12 - Updated iptables patch.  Now there are two iptables patches, one 
+for kernels before 2.6.20 and one for 2.6.20 forward.
+
+
+v2.11 - Added missing nf_ct_l3proto_module_put() call to 2.6.20/2.6.21 
+patch. Added patch for 2.6.22.  Some stylistic changes to 2.6 kernel 
+code.
+
+
+v2.10 - Added a missing check to the pattern parsing code in iptables. 
+Updated kernel patch for 2.6.20+, using paranoid locking. Some stylistic 
+changes to 2.6 kernel code. No changes to 2.4.
+
+
+v2.9 - Changes to 2.6 version: Implemented "unset" which matches 
+connections which are still being tested with no match.  No changes to 
+2.4 version or iptables.
+
+
+v2.8 - Changes to 2.6 version: Removed checkmatch() from ipt_layer7.c 
+(fixes iptables' "Invalid argument" problem) and surpressed compiler 
+warning about non-const skb in match().  Removed stray_code, since the 
+new port is to userspace, where this is not necessary either.
+
+
+v2.7 - In 2.6 version, ipt_layer7 now automatically loads ip_conntrack. 
+No changes to 2.4 version or iptables.  Updated documentation slightly.
+
+
+v2.6 - No functional changes, just changed one line to conform to 2.6.18.
+
+
+v2.5 - Changes to iptables only
+
+- iptables now allows spaces or tabs after the protocol name in the
+protocol files.  This allows, for instance, "http " or "http I am the
+coolest!!!" instead of just "http" in http.pat.  Pattern writers should
+stay conservative in what they send, however.
+
+
+v2.4.1
+
+- I had accidentally overwritten the 2.4 patch with a newer version of the
+2.6 patch.  Oops!  It is now restored.
+
+
+v2.4 - Changes to 2.6 version only
+
+- Changed to using Deti Fliegl's match_globals in the regexp code
+for SMP safeness.  (The code as a whole is still probably not SMP safe.)
+
+- Added Deti Fliegl's "if(!master_conntrack->layer7.app_data) return 0;"
+to add_data.
+
+- Removed whitespace at ends of lines to make quilt happy.
+
+
+v2.3 - No functional changes
+
+- Updated patch for 2.6.17.
+
+
+v2.2
+
+- Fixed type mismatch in debugging printk.
+
+- Updated for minor formatting changes in 2.6.16 that broke the old patch.
+
+
+v2.1 - iptables now issues warnings when regular expressions contain hex
+codes that are regexp control characters or null.  No change to kernel
+patches.  (Noted that kernel patch is now tested with 2.6.15.)
+
+
+v2.0 - No big changes.
+
+- iptables used to ask for --pattern if it didn't get --l7proto.  Fixed.
+
+- Kernel patch is now aganst 2.6.14.  This is just cosmetic, it still works
+with 2.6.13.
+
+- Cleaned up some #ifdef stuff in ipt_layer7.c
+
+- Added version information to kernel module.
+
+
+v2.0-beta - The maximum number of bytes examined can now be specified at
+module load time (rather than compile time).  Increased the default
+numpackets to 10.
+
+
+v1.5 - No functional changes.
+
+- Updated 2.6 kernel patch for new lock syntax.
+
+- Removed init() from iptables (not necessary).
+
+- Made debugging messages less enthusiastic.
+
+v1.4 - Changed NSUBEXP back to 10 since it looks like our regexp library
+can't actually handle higher numbers properly.  No change to iptables.
+
+
+v1.3
+
+- Brought the 2.4 patch up-to-date with the 2.6 patch.  It now contains
+all the features that 2.6 does.  (The 2.4 version still does not use
+CONFIG_IP_NF_CT_ACCT, so it is not necessary to apply that patch to make
+l7 work.)
+
+- Increased NSUBEXP from 10 to 16 in regexp.h to allow for longer
+regular expressions.
+
+- Removed extraneous .orig file from the iptables patch.
+
+- Module unloading in 2.4 now works.
+
+
+v1.2 - Bug fix release:
+
+- Fixed another (smaller, but significant) memory leak in 2.6 kernel. 
+The fix is a bit of a hack and I'd like to fix it in a more satisfying
+way later.
+
+- Fixed compilation of 2.4 kernel on RH9 and other systems by adding
+another #include to ipt_layer7.c
+
+No change to iptables.
+
+
+v1.1 - Added patch for Linux 2.6.11.X.  No real changes.
+
+
+v1.0.1 - Bug fix release:
+
+- Fixed memory leak in kernel.  
+
+- Fixed iptables crash on AMD64. 
+
+- Fixed kernel compilation problem on AMD64.
+
+This release does not yet work with Linux 2.6.11.X.  Wait for v1.1 if
+you need that.  (Should be soon.)
+
+
+v1.0 - No changes to 2.4 version or iptables.  Shuffled around a bit of code
+in the 2.6 version so that it could patch cleanly to both 2.6.9 and 
+2.6.10.  Included the previous version of 2.6 patch so that people using 
+2.6.0-2.6.8 don't have to get an older package.
+
+
+v1.0-rc1 - No changes to the 2.4 version or iptables.  For 2.6:
+
+- Connections that have no match and are no longer being tested are now
+marked "unknown". 
+
+- Now uses (and depends on) "Connection tracking flow accounting"
+(CONFIG_IP_NF_CT_ACCT). 
+
+- Skbuffs are now linearized and error messages are net_ratelimited.
+
+
+v0.9.2 (retroactive) - Added a #include to 2.4 kernel patch so it would 
+compile for more people.
+
+
+v0.9.1 - Changes to ipt_helper.c that aren't part of l7-filter had crept
+into the 2.6 patch of v0.9.0.  They are now removed.  No other changes.
+
+
+v0.9.0 - 2.4 version now should compile correctly if l7-filter is
+built-in. Fixed a significant bug which caused some patterns not to work
+(tolower was munging 'upper ascii' characters).  No change to iptables.
+
+
+v0.8.2 - Iptables now uses modular man pages (as of v1.2.10).  The iptables
+patch now conforms to this new format.  No change to kernel.
+
+
+v0.8.1 - Made code slightly more paranoid about running out of memory.  No 
+change to iptables.
+
+
+v0.8 - Small improvements to locking code.  All kmallocs should be
+checked now. Converted the regexp code into this century's C syntax. 
+Added a patch for Linux 2.4.  No change to iptables.
+
+
+v0.7 - Improvements to locking code.  No change to iptables.
+
+
+v0.6.1 - Fixed places where iptables used --l7-proto instead of --l7proto.
+No change to kernel.
+
+
+v0.6 - Significant kernel code cleanup.  Attempted to make code SMP safe with
+spin_lock() and GFP_ATOMIC.  No change to iptables code.
+
+
+v0.5 - Initial release in this format.
