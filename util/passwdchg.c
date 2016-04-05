@@ -28,8 +28,8 @@ int execute_cmd()
 		dup2(fd[1], 1);
 		dup2(fd2[0], 0);
 		fprintf(stderr, "Child:\n");
-		//execlp("passwd", NULL);
-		execlp("/usr/bin/passwd", "passwd", "root", NULL);
+		//execlp("/usr/bin/passwd", "passwd", "root", NULL);
+		system("passwd root");
 		fprintf(stderr, "Child2:\n");
 	}
 	else if (pid > 0)
@@ -41,16 +41,16 @@ int execute_cmd()
 		dup2(fd2[1], 1);
 		
 		fprintf(stderr, "Parent:\n");
-		read(1, buf, sizeof(buf));
+		//read(1, buf, sizeof(buf));
 		fprintf(stderr, "buf=%s\n", buf);
 		sleep(1);
-		read(1, buf, sizeof(buf));
+		//read(1, buf, sizeof(buf));
 		fprintf(stderr, "buf=%s\n", buf);
 		sleep(1);
-		read(1, buf, sizeof(buf));
+		//read(1, buf, sizeof(buf));
 		fprintf(stderr, "buf=%s\n", buf);
 		sleep(1);
-		read(1, buf, sizeof(buf));
+		//read(1, buf, sizeof(buf));
 		fprintf(stderr, "buf=%s\n", buf);
 	}
 	
