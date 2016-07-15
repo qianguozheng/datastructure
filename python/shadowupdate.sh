@@ -10,6 +10,7 @@ if [ "$newMd5" != "$oldMd5" ]; then
 	mv /tmp/shadowsocks.json /etc/shadowsocks.json
 	killall -9 ss-redir
 	/etc/init.d/shadowsocks start
+	rm /tmp/shadowsocks.json
 fi
 
 sleep 120
