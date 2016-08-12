@@ -9,7 +9,7 @@ int main()
 		return 0;
 	}
 	
-	r->set("name", "QianGuoZheng");
+	r->set("name", "http://192.168.1.32/sample.html");
 	printf("Get the name is %s\n", r->get("name").c_str());
 	
 	delete r;
