@@ -237,7 +237,8 @@ static void server_recv_cb(EV_P_ ev_io *w, int revents)
 	//process content recevied from client.
 	/* 判断是否为完整的协议数据报文，再决定是否处理 */
 	
-	//ssize_t s = send(w->fd, buf, strlen(buf), 0);
+	send(w->fd, "\r\n\r\n{\"hw\":\"MT7620A\", \"fwmd5\":\"8b00e50904670a5dee53bd78d478b639\",\"fwdlurl\":\"http://r.magicwifi.com.cn/firmware/Lemon_mt7620n_uImage_v116\"}",
+		strlen("\r\n\r\n{\"hw\":\"MT7620A\", \"fwmd5\":\"8b00e50904670a5dee53bd78d478b639\",\"fwdlurl\":\"http://r.magicwifi.com.cn/firmware/Lemon_mt7620n_uImage_v116\"}"), 0);
 	char test[409600];
 	//memset(test, 'X', sizeof(test));
 	

@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/select.h>
+#include "cJSON.h"
 
 #define SERVER_IP "127.0.0.1"
 #define SERVER_PORT 10001
@@ -113,17 +114,35 @@ int send_request(char *request, char *response)
 }
 
 
+/* Implement the http request parse function */
+int parse_http_header()
+{
+	
+	return 0;
+}
+
 int upgrade()
 {
 	char request[MAX_BUF];
-	char content[MAX_BUF-1024];
+	char response[MAX_BUF];
+	//char content[MAX_BUF-1024];
 	int len = 0;
 	memset(request, 0, sizeof(request));
-	memset(content, 0, sizeof(content));
+	memset(response, 0, sizeof(response));
+	//memset(content, 0, sizeof(content));
 	
-	snprintf(content, sizeof(content), 
-	"{\"version\":\"xxx\",\"mac\":\"aa:cc:bb:dd:ee:ff\",\"hw\":\"7620a\"}"
-	);
+	// Get the real value from system
+	cJSON *pUpgrade = cJSON_CreateObject();
+	cJSON_AddStringToObject(pUpgrade, "mac", "aa:bb:cc:ee:ff:dd");
+	cJSON_AddStringToObject(pUpgrade, "hw", "mt7620a");
+	cJSON_AddStringToObject(pUpgrade, "version", "1.1.33");
+	
+	char *pPostUpgrade = cJSON_Print(pUpgrade);
+	
+	
+	//snprintf(content, sizeof(content), 
+	//"{\"version\":\"xxx\",\"mac\":\"aa:cc:bb:dd:ee:ff\",\"hw\":\"7620a\"}"
+	//);
 	
 	/* Form http request header */
 	snprintf(request, sizeof(request)-1, "POST /dqdata/upgrade HTTP/1.1\r\n"
@@ -131,12 +150,72 @@ int upgrade()
 								 "ContentLength: %d\r\n"
 								 "ContentType: text/json\r\n\r\n"
 								 "%s", 
-								 SERVER_IP, strlen(content), content);
-								 
+								 SERVER_IP, strlen(pPostUpgrade), pPostUpgrade);
+
+	free(pPostUpgrade);
+
 	len = send_request(request, request);
 	
 	printf("Response[%d]=%s\n", len, request);
 	request[MAX_BUF] = '\0';
+	
+	/* Parse the response from web server */
+	printf("strlen request=%d, len=%d\n", strlen(request), len);
+	if (strlen(request) > 0 && len > 0)
+	{
+		char *ptr = NULL;
+		if (ptr = strstr(request, "\r\n\r\n"))
+		{
+			printf("Parse Response\n");
+			ptr += strlen("\r\n\r\n");
+			sprintf(response, "%s", ptr);
+			
+			cJSON *pItemMd5 = NULL;
+			cJSON *pItemURL = NULL;
+			cJSON *pItemHW = NULL;
+			cJSON *pItemVer = NULL;
+			
+			cJSON *pResult = cJSON_Parse(response);
+			if (pResult)
+			{
+				pItemURL = cJSON_GetObjectItem(pResult, "fwdlurl");
+				pItemMd5 = cJSON_GetObjectItem(pResult, "fwmd5");
+				pItemHW = cJSON_GetObjectItem(pResult, "hw");
+				if (pItemURL && pItemMd5 && pItemHW)
+				{
+					char *url = pItemURL->valuestring;
+					char *md5 = pItemMd5->valuestring;
+					char *hw = pItemHW->valuestring;
+					if (0 == strcasecmp(hw, "MT7620A"))
+					{
+						char upgradeCmd[512];
+						char firmware[256];
+						
+						memset(firmware, 0, sizeof(firmware));
+						memset(upgradeCmd, 0, sizeof(upgradeCmd));
+						
+						char *p = strrchr(url, '/'); //Get the firmware name
+						p++;
+						if (p)
+						{
+							snprintf(firmware, "%s", p);
+							snprintf(upgradeCmd, sizeof(upgradeCmd)-1,"/sbin/shell_upgrade %s %s %s &", url, md5, firmware);
+							printf("upgradeCmd=[%s]\n", upgradeCmd);
+							system(upgradeCmd);
+						}
+					}
+				}
+				else
+				{
+					printf("Something wrong\n");
+				}
+				
+			}
+			
+			cJSON_Delete(pResult);
+			
+		}
+	}
 	
 	return 0;
 }
