@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/select.h>
+#include <arpa/inet.h>
 
 #define SERVER_IP "127.0.0.1"
 #define SERVER_PORT 8990
