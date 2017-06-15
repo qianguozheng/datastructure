@@ -20,8 +20,8 @@ func sendMessage() {
 	}
 
 	for {
-		words := "{\"Id\":1,\"Name\":\"golang\",\"Message\":\"message\"}"
-		conn.Write(proto.Packet([]byte(words)))
+		words := "{\"cmd\":\"login\",\"seqId\":\"1234321\",\"Message\":\"message\"}"
+		conn.Write(proto.PacketLemon3([]byte(words), 0x34))
 		fmt.Println("Send Data Already")
 
 		rbuf := make([]byte, MaxRead+1)
@@ -35,7 +35,7 @@ func sendMessage() {
 		readerChannel := make(chan []byte, 16)
 		go reader(readerChannel)
 		tmpBuffer := make([]byte, 0)
-		tmpBuffer = proto.Unpack(append(tmpBuffer, rbuf[:length]...), readerChannel)
+		tmpBuffer = proto.UnpackLemon3(append(tmpBuffer, rbuf[:length]...), readerChannel)
 
 		time.Sleep(time.Second * 2)
 

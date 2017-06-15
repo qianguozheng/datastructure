@@ -33,5 +33,6 @@ int main()
 	evhtp_bind_socket(htp, "0.0.0.0", 8080, 1024);
 	event_base_loop(evbase, 0);
 	
+	event_base_free(evbase);
 	return 0;
 }

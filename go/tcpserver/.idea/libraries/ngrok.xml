@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ngrok">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../../../oschina/ngrok" />
+    </SOURCES>
+  </library>
+</component>

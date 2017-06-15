@@ -91,6 +91,7 @@ int main()
 
     printf("index=%d\n", index);
     struct modelInfo m = model[index];
-    printf("iface=%s\n", m.iface);
+    printf("iface=%s\n", model[index].iface);
+    printf("index=%d\n", model[index].index);
 
 }

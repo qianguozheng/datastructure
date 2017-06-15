@@ -75,8 +75,37 @@ func test() {
 	}
 }
 
+type I interface {
+	Get() int
+	Put(int)
+}
+type S struct {
+	i int
+}
+
+func (p *S) Get() int {
+	return p.i
+}
+
+func (p *S) Put(t int) {
+	p.i = t
+}
+func (p *S) Reset() {
+	p.i = 0
+}
+
+func f(p I) {
+	fmt.Println(p.Get())
+	p.Put(1)
+	fmt.Println(p.Get())
+
+}
 func main() {
-	wl := &WangLan{}
+	var s S
+
+	f(&s)
+
+	/*wl := &WangLan{}
 	jl := &JiangLou{}
 
 	var person Speaker
@@ -87,4 +116,5 @@ func main() {
 	person.Interrupt("Stop, ass")
 
 	test()
+	*/
 }

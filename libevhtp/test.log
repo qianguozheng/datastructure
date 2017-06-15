@@ -1,0 +1,85 @@
+2017-05-09 11:29:15.381146|debug|listen 8088 fd=7
+
+2017-05-09 11:30:13.855289|debug|listen 8088 fd=7
+
+2017-05-09 13:44:27.142647|debug|listen 8088 fd=7
+
+2017-05-09 14:01:30.999819|debug|listen 8088 fd=7
+
+2017-05-09 14:01:30.999957|debug|fork a child process pid=28783
+
+2017-05-09 14:01:31.000027|debug|the child process run this pid=0
+
+2017-05-09 14:11:33.593958|debug|listen 8088 fd=7
+
+2017-05-09 14:11:33.594073|debug|fork a child process pid=29343
+
+2017-05-09 14:11:33.594229|debug|the child process run this pid=0
+
+2017-05-09 14:12:13.984424|debug|lmg_hearbeat start
+2017-05-09 14:12:13.984481|debug|listen 8088 fd=7
+
+2017-05-09 14:12:13.984531|debug|fork a child process pid=29382
+
+2017-05-09 14:12:13.984626|debug|the child process run this pid=0
+
+2017-05-09 14:13:16.087477|debug|listen 8088 fd=7
+
+2017-05-09 14:13:16.087558|debug|fork a child process pid=29448
+
+2017-05-09 14:13:16.087607|debug|the child process run this pid=0
+
+2017-05-09 14:14:20.351889|debug|listen 8088 fd=7
+
+2017-05-09 14:14:20.352026|debug|fork a child process pid=29508
+
+2017-05-09 14:14:20.352172|debug|the child process run this pid=0
+
+2017-05-09 14:29:02.809093|debug|listen 8088 fd=7
+
+2017-05-09 14:29:02.809175|debug|fork a child process pid=30279
+
+2017-05-09 14:29:02.809305|debug|the child process run this pid=0
+
+2017-05-09 14:29:42.488958|debug|listen 8088 fd=7
+
+2017-05-09 14:29:42.489046|debug|fork a child process pid=30316
+
+2017-05-09 14:29:42.489082|debug|the child process run this pid=0
+
+2017-05-09 14:30:36.304703|debug|listen 8088 fd=7
+
+2017-05-09 14:30:36.304789|debug|fork a child process pid=30364
+
+2017-05-09 14:30:36.304834|debug|the child process run this pid=0
+
+2017-05-09 14:33:52.704379|debug|listen 8088 fd=7
+
+2017-05-09 14:33:52.704467|debug|fork a child process pid=30550
+
+2017-05-09 14:33:52.704508|debug|the child process run this pid=0
+
+2017-05-09 14:34:25.305291|debug|listen 8088 fd=7
+
+2017-05-09 14:34:25.305375|debug|fork a child process pid=30587
+
+2017-05-09 14:34:25.305429|debug|the child process run this pid=0
+
+2017-05-09 14:39:34.562912|debug|listen 8088 fd=7
+
+2017-05-09 14:39:34.563087|debug|fork a child process pid=30900
+
+2017-05-09 14:39:34.563174|debug|the child process run this pid=0
+
+2017-05-09 14:40:31.312461|debug|listen 8088 fd=7
+
+2017-05-09 14:40:31.312576|debug|fork a child process pid=30951
+
+2017-05-09 14:40:31.312625|debug|the child process run this pid=0
+
+2017-05-09 14:41:23.703805|debug|listen 8088 fd=7
+
+2017-05-09 14:41:23.703899|debug|fork a child process pid=31008
+
+2017-05-09 14:41:23.703951|debug|the child process run this pid=0
+

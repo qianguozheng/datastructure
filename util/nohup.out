@@ -1,0 +1,720 @@
+ 2017-06-13 11:16:16 INFO: initializing ciphers... rc4-md5
+ 2017-06-13 11:16:16 INFO: tcp port reuse enabled
+ 2017-06-13 11:16:16 INFO: listening at 127.0.0.1:1080
+ 2017-06-13 15:30:04 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 15:32:41 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 15:32:41 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 15:32:56 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 15:42:22 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 15:42:25 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 15:42:26 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 15:42:33 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 15:42:35 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 15:42:48 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:42:48 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:42:48 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:42:48 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:42:48 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:42:48 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:42:48 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:42:49 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:42:49 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:42:50 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:42:55 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:42:55 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:42:55 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:42:55 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:42:55 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:42:55 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:42:55 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:42:55 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:42:55 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:42:55 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:43:19 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:43:20 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:45:30 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:45:33 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:45:36 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:45:39 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:45:42 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:45:45 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:45:48 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:45:51 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:45:54 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:45:57 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:46:00 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:46:03 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:46:06 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:46:09 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:46:12 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:46:15 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:46:18 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:46:21 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:46:24 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:46:27 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:46:42 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:46:45 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:46:48 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:46:51 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:46:54 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:46:57 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:47:00 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:47:03 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:47:06 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:47:09 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:47:12 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:47:15 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:47:18 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:47:21 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:47:24 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:47:27 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:47:30 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:47:33 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:47:36 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:47:39 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:47:42 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:47:42 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:47:45 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:47:45 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:47:48 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:47:48 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:47:51 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:47:51 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:47:54 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:47:54 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:47:57 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:47:57 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:48:00 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:48:00 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:48:03 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:48:03 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:48:06 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:48:06 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:48:09 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:48:09 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:49:21 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:49:24 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:49:27 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:49:30 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:49:33 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:49:36 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:49:39 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:49:42 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:49:45 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:49:48 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:51:54 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:51:57 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:52:00 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:52:03 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:52:06 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:52:09 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:52:12 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:52:15 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:52:18 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:52:21 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:52:21 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:52:24 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:52:27 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:52:30 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:52:33 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:52:36 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:52:39 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:52:42 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:52:45 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:52:48 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:57:39 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:57:42 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:57:45 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:57:48 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:57:51 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:57:54 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:57:57 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:58:00 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:58:00 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:58:03 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:58:03 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:58:06 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:58:06 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:58:09 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:58:09 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:58:12 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:58:12 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:58:15 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:58:15 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:58:18 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:58:18 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:58:21 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:58:21 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:58:24 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:58:24 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:58:27 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:58:27 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:58:30 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:58:33 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 15:58:36 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 16:05:45 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 16:05:48 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 16:05:51 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 16:05:54 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 16:05:57 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 16:06:00 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 16:06:03 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 16:06:06 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 16:06:09 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 16:06:12 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 16:06:22 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 16:10:57 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 16:11:07 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 16:11:27 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 16:12:07 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 16:13:27 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 16:16:10 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 16:21:30 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 16:29:45 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 16:32:10 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 16:43:48 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 16:43:49 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:17:05 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:17:15 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:17:35 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:18:15 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:19:35 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:22:15 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:23:57 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:23:57 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:27:35 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:29:47 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:29:47 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:30:12 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:30:12 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:30:12 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:30:12 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:30:12 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:30:12 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:30:12 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:30:12 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:30:12 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:30:12 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:30:12 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:30:13 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:30:13 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:30:14 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:30:14 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:30:15 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:30:15 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:30:16 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:30:16 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:30:17 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:30:17 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:30:18 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:30:18 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:30:19 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:30:19 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:30:20 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:30:20 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:30:21 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:30:21 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:30:22 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:30:22 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:30:23 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:30:23 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:30:24 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:30:24 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:30:25 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:30:25 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:30:26 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:30:26 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:30:27 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:30:27 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:30:28 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:30:28 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:30:29 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:30:29 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:30:30 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:30:30 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:30:31 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:30:31 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:30:32 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:30:32 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:30:33 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:30:33 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:30:34 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:30:34 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:30:35 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:30:35 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:30:35 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:38:15 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:38:15 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:38:15 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:38:15 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:38:15 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 17:38:16 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:39:47 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 17:39:47 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 18:44:04 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 18:44:14 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 18:44:34 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 18:45:14 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:45:15 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:45:16 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:45:17 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:45:18 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:45:19 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:45:20 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:45:21 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:45:22 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:45:23 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:48:55 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:48:56 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:48:57 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:48:58 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:48:59 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:49:00 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:49:01 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:49:02 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:49:05 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:49:06 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:49:17 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:49:18 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:49:19 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:49:20 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:49:21 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:49:22 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:49:22 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 18:49:23 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:49:24 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:49:25 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:49:26 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:50:16 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 18:50:26 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 18:50:46 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 18:51:26 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 18:52:46 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 18:56:23 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 18:56:33 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 18:58:33 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 19:10:00 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 19:10:10 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 19:10:50 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 19:13:33 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 19:16:21 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 19:16:22 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 19:20:11 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 19:20:11 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 19:24:08 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 19:30:33 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 19:30:34 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 19:34:35 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 19:42:11 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 19:44:15 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 19:52:11 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 19:54:45 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 20:00:38 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 20:01:41 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 20:02:54 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 20:02:54 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 20:02:55 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 20:14:28 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 20:17:21 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 20:17:22 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 20:17:23 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 20:17:24 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 20:17:25 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 20:17:26 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 20:17:27 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 20:17:28 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 20:17:29 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 20:17:30 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 20:55:19 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 20:58:56 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 21:25:50 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 21:25:51 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 21:53:34 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 21:53:35 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 21:53:37 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 21:55:46 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 21:55:59 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 21:56:00 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 21:56:03 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 21:56:16 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 22:27:16 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 22:27:34 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 22:27:35 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 22:27:36 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 22:27:37 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 22:27:38 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 22:27:39 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 22:27:40 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 22:56:49 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 22:56:50 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 22:56:51 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 22:56:52 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-13 23:26:52 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 23:49:54 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 23:49:54 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 23:50:51 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 23:57:03 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-13 23:57:04 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 00:15:52 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 00:16:09 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 00:16:18 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 00:16:18 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 00:16:19 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 00:16:19 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 00:16:20 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 00:16:20 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 00:16:21 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 00:16:21 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 00:16:22 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 00:16:23 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 00:18:23 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 00:18:24 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 00:18:25 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 00:18:26 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 00:18:27 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 00:18:28 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 00:18:29 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 00:18:30 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 00:18:31 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 00:18:32 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 00:18:33 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 00:18:34 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 00:18:35 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 00:18:36 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 00:18:37 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 00:18:38 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 00:18:39 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 00:18:40 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 00:18:41 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 00:22:41 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 00:22:41 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 00:22:42 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 00:27:51 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 00:30:43 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 00:31:29 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 00:31:30 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 00:32:00 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 00:48:00 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 00:48:00 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 00:48:01 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 01:20:32 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 01:21:21 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 01:24:00 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 01:27:44 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 01:58:51 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 02:25:31 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 02:25:31 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 02:25:31 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 02:25:32 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 02:26:50 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 02:26:51 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 02:26:51 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 02:26:52 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 02:26:53 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 02:26:54 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 02:28:41 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 03:32:16 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 03:33:17 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 03:33:22 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 03:35:23 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 03:38:30 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 03:38:30 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 03:44:26 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 03:44:27 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 03:44:28 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 03:44:29 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 03:54:22 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 04:16:20 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 04:25:32 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 04:25:35 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 04:25:36 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 04:25:37 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 04:25:38 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 04:25:39 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 04:25:40 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 04:25:41 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 04:25:42 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 04:25:43 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 04:25:44 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 04:25:45 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 04:25:46 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 04:25:47 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 04:25:48 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 04:25:49 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 04:25:50 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 04:31:13 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 04:46:02 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 05:16:03 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 05:46:40 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 05:55:50 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 05:55:50 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 05:55:51 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 05:55:51 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 05:55:52 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 05:55:52 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 05:55:53 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 06:16:43 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 06:26:22 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 06:26:23 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 06:26:26 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 06:26:53 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 06:47:30 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 07:16:24 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 07:16:25 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 07:17:36 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 07:47:56 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 08:17:53 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 08:17:54 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 08:27:16 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 08:28:13 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 08:48:51 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 08:50:56 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 08:50:57 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 08:50:58 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 08:50:59 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 08:51:00 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 08:51:01 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 08:51:02 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 08:51:03 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 08:51:04 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 08:51:05 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 08:51:06 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 08:51:08 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 08:51:09 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 08:51:10 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 09:23:31 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 09:23:31 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 09:23:31 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 09:23:31 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 09:23:31 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 09:23:31 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 09:23:32 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 09:49:47 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 09:50:04 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:04:48 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 10:04:49 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:05:59 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:07:59 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 10:12:02 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:28:25 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 10:28:26 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:28:26 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 10:28:26 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 10:28:43 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 10:28:50 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:28:51 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:31:43 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:31:43 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:31:43 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:31:43 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:31:43 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:31:43 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 10:31:43 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 10:31:46 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:31:47 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:31:47 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:31:48 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:31:50 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:31:51 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:31:53 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:31:55 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:31:56 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:31:57 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:31:57 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:31:58 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:31:59 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:00 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:01 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:03 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 10:32:03 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:04 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:07 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:09 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:10 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:11 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:12 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:14 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:15 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:16 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:18 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:19 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:20 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:21 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:22 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:23 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:25 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:28 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:28 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:29 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:30 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:31 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:32 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:34 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:35 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:37 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:38 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:38 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:39 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:43 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:44 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:32:54 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 10:32:54 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 10:33:17 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 10:33:18 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 10:33:31 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 10:33:41 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 10:33:42 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 10:33:43 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 10:36:46 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 10:36:47 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 10:36:48 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 10:37:06 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 10:37:08 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 10:37:15 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 10:37:16 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 10:38:33 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 10:38:34 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 11:36:33 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 11:36:34 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 11:36:36 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 11:36:39 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 12:39:04 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 12:39:04 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 12:39:07 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 12:39:07 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 12:39:10 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 12:39:10 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 12:39:28 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 12:39:31 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 12:39:34 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 12:39:37 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 12:47:30 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 12:55:37 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 13:45:42 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 13:45:55 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 13:47:10 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 13:47:10 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 13:47:13 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 13:47:13 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 13:47:16 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 13:47:16 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 13:47:16 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 13:47:19 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 13:47:19 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 13:47:19 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 13:47:22 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 13:47:22 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 13:47:22 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 13:47:25 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 13:47:25 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 13:47:27 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 13:51:11 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 13:53:23 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 13:53:33 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 13:57:26 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 13:58:07 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 13:58:08 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 13:58:09 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 14:01:26 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 14:02:27 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 14:02:27 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 14:02:28 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 14:02:29 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 14:03:06 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 14:04:48 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 14:17:15 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 14:17:15 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 14:17:15 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 14:17:16 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 14:17:17 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 14:17:18 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 14:17:19 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 14:17:20 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 14:17:21 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 14:17:27 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 14:17:27 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 14:17:28 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 14:20:46 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 14:22:58 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 14:27:20 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 14:27:21 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 14:27:21 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 14:27:21 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 14:44:18 ERROR: connect: Network is unreachable
+ 2017-06-14 14:44:19 ERROR: connect: Network is unreachable
+ 2017-06-14 14:55:13 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 14:55:13 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 14:55:13 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 14:55:13 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 14:55:13 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 14:55:13 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 14:55:14 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 14:55:14 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 14:55:15 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 14:55:19 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 15:07:52 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 15:07:53 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 15:07:54 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 15:07:55 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 15:07:56 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 15:07:57 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 15:07:58 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 15:07:59 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 15:08:00 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 15:08:01 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 15:17:57 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 15:20:19 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 15:20:42 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 15:23:24 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 15:23:24 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 15:23:24 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 15:23:25 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 15:23:28 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 15:23:28 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 15:23:29 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 15:23:30 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 15:23:30 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 15:23:37 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 15:29:21 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 16:25:31 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 16:25:35 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 16:25:38 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 16:25:41 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 16:25:42 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 16:25:55 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 16:26:05 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 16:26:35 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 16:26:36 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 16:26:37 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 16:26:38 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 16:26:41 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 16:26:42 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 16:26:43 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 16:26:44 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 16:26:45 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 16:26:54 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 16:27:01 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 16:27:01 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 16:27:02 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 16:27:03 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 16:27:04 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 16:27:05 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 16:27:06 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 16:27:57 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 16:28:00 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 16:28:01 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 16:28:02 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 16:28:03 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 16:28:04 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 16:28:05 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 16:28:06 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 16:28:07 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 16:28:08 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 16:30:57 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 16:36:11 ERROR: remote_recv_cb_recv: Connection reset by peer
+ 2017-06-14 19:15:47 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 19:15:50 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 19:15:53 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 19:15:56 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 19:15:59 ERROR: getpeername: Transport endpoint is not connected
+ 2017-06-14 19:16:02 ERROR: getpeername: Transport endpoint is not connected
