@@ -99,12 +99,12 @@ char *form_http_header(char *ua, char *host, char *url){
 }
 
 // http://magicwifi.com.cn/captive/index.html
-void parse_url(char *domain, int *port, char *url)
+int parse_url(char *domain, int *port, char *url)
 {
 	char urlstr[256];
 	char portstr[10];
 	char *start = NULL, *end = NULL;
-	
+	int ret = 0;
 	memset(portstr, 0, sizeof(portstr));
 	memset(urlstr, 0, sizeof(urlstr));
 	strcpy(urlstr, "http://magicwifi.com.cn:38001/captive/index.html");  //Read from config
@@ -112,7 +112,15 @@ void parse_url(char *domain, int *port, char *url)
 	start = end = urlstr;
 	//end = urlstr;
 	printf("start=%s, end=%s\n", start, end);
-	start += strlen("http://");
+	if (strstr(start, "http://"))
+	{
+		start += strlen("http://");
+	}
+	else {
+		//No http header before url
+		ret = -1;
+		return ret;
+	}
 	printf("start=%s, end=%s\n", start, end);
 	if (end = strchr(start, ':')) //Assign port, not default 80
 	{
@@ -140,6 +148,7 @@ void parse_url(char *domain, int *port, char *url)
 		memcpy(url, start, strlen(start));
 		printf("url=[%s]\n", url);
 	}
+	return ret;
 }
 
 int send_request(char *domain, int port, char *url){

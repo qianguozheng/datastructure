@@ -30,7 +30,7 @@ func server(host string) *net.TCPListener {
 // TCP Server startup
 func Main() {
 
-	HostAndPort := "192.168.8.102:4777"
+	HostAndPort := "192.168.56.3:4777"
 	listener := server(HostAndPort)
 	defer listener.Close()
 
