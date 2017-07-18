@@ -3,9 +3,7 @@
 #obj-m += rootkit.o
 #obj-m += rickroll.o
 #obj-m += excited_virus.o
-#obj-m += mmap/mymmap.o
-#obj-m += thread/kthread.o
-obj-m += ioctl/ioctl_basic.o
+obj-m += generic_kernel.o
 all:
 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
 

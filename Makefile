@@ -4,6 +4,7 @@ LDFLAGS=
 SUBDIR=sort
 # source code file *.c
 sources = $(wildcard util/*.c) $(wildcard sort/*.c) $(wildcard crypt/*.c)
+#sources =  $(wildcard sort/*.c) $(wildcard crypt/*.c)
 
 sources += $(wildcard ./*.c)
 objs = $(sources:%.c=%.o)

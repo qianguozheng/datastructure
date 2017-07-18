@@ -1,3 +1,6 @@
 *.o
 *~
 main
+a.out
+*/a.out
+go/webserver/.idea/
