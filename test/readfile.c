@@ -11,11 +11,16 @@ int main(){
 		while (fgets(buf, sizeof(buf), fp)){
 			if (strstr(buf, "interface")){
 				//Find name between''
-				char *start = strchr(buf, '\'');
-				char *end = strrchr(buf, '\'');
-				*end = '\0';
-				snprintf(name, sizeof(name)-1, "pppoe-%s", start+1);
+				//char *start = strchr(buf, '\'');
+				//char *end = strrchr(buf, '\'');
+				//*end = '\0';
+				//snprintf(name, sizeof(name)-1, "pppoe-%s", start+1);
+				printf("buf=[%s]\n", buf);
 				
+			}
+			
+			if (strstr(buf, "wan") && strstr(buf, "interface")){
+				printf("buf=[%s]===\n", buf);
 			}
 			
 			memset(buf, 0, sizeof(buf));

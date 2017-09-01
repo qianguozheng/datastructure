@@ -15,6 +15,11 @@
 #include <netdb.h>
 #include <sys/socket.h>
 #include <unistd.h>
+#include <time.h>
+
+#include <unistd.h>
+#include <stdarg.h>
+#include <sys/time.h>
 
 int dnsquery(const char *host, int portnum, char *ip_addr)
 {
@@ -62,7 +67,7 @@ int dnsquery(const char *host, int portnum, char *ip_addr)
          continue;
       }
 
-	printf("Address=%s", ip_addr);
+	printf("Address=%s\n", ip_addr);
 	if (0 == strcasecmp("::", ip_addr) ||
 		0 == strcasecmp("::1", ip_addr))
 	{
@@ -91,7 +96,7 @@ char *form_http_header(char *ua, char *host, char *url){
 					"\r\n", url, ua, host);
 	
 	p = strdup(header);
-	printf("p=%s\n", p);
+	//printf("p=%s\n", p);
 	if (!p){
 		return NULL;
 	}
@@ -164,7 +169,7 @@ int send_request(char *domain, int port, char *url){
 	
 	dnsquery(domain, 80, ipaddr);
 	
-	fprintf(stderr, "domain=%s, ipaddr=%s\n", domain, ipaddr);
+	//fprintf(stderr, "domain=%s, ipaddr=%s\n", domain, ipaddr);
 	memset(&addr,0,sizeof(struct sockaddr_in));
 	addr.sin_family=AF_INET;
 	addr.sin_port=htons(port);
@@ -178,7 +183,7 @@ int send_request(char *domain, int port, char *url){
 	}
 	
 	char *request = form_http_header("MagicWiFi", domain, url);
-	printf("request=[%s]\n", request);
+	//printf("request=[%s]\n", request);
 	send(sock, request, strlen(request), 0);
 	free(request);
 	
@@ -186,9 +191,10 @@ int send_request(char *domain, int port, char *url){
 	
 	char response[4096];
 	memset(response, 0, sizeof(response));
-	read(sock, response, 4096);
+	int len= read(sock, response, 4096);
+	printf("response len=%d\n", len);
 	
-	fprintf(stderr, "response=[%s]\n", response);
+	//fprintf(stderr, "response=[%s]\n", response);
 	//struct hostent *gethostbyname(const char *hostname);
 	close(sock);
 	
@@ -200,6 +206,10 @@ int send_request(char *domain, int port, char *url){
 	return -1;
 }
 
+//micro seconds
+int time_consume(struct timespec start, struct timespec end){
+	return ((end.tv_sec - start.tv_sec) * 1000  + (end.tv_nsec-start.tv_nsec)/1000000);
+}
 
 int main(int argc,char *argv[])
 {
@@ -208,6 +218,7 @@ int main(int argc,char *argv[])
   //printf("Title:%s\n",title);
   
   //
+#if 0
   char domain[128];
   int port;
   char url[128];
@@ -221,7 +232,29 @@ int main(int argc,char *argv[])
   printf("==url=[%s]\n", url);
   printf("==port=[%d]\n", port);
   
-  send_request(domain, port, url);
+  send_request(domain, port, url);  
+#endif
+
+	//http://121.201.55.180/captive/test.png
+	struct timespec start, end;
+	clock_gettime(CLOCK_MONOTONIC, &start);
+    send_request("121.201.55.180", 80, "/captive/test.png");
+	clock_gettime(CLOCK_MONOTONIC, &end);
+	
+	//printf("time=%d, %ld\n", );
+	printf("consume=%d micro seconds\n", time_consume(start, end));
+	
+	clock_gettime(CLOCK_MONOTONIC, &start);
+    send_request("112.73.85.203", 80, "/captive/test.png");
+	clock_gettime(CLOCK_MONOTONIC, &end);
+	//printf("time=%d, %ld\n", end.tv_sec - start.tv_sec, (end.tv_nsec-start.tv_nsec)/1000000);
+	printf("consume=%d micro seconds\n", time_consume(start, end));
+	
+	clock_gettime(CLOCK_MONOTONIC, &start);
+    send_request("123.59.251.252", 80, "/captive/test.png");
+	clock_gettime(CLOCK_MONOTONIC, &end);
+	//printf("time=%d, %ld\n", end.tv_sec - start.tv_sec, (end.tv_nsec-start.tv_nsec)/1000000);
+	printf("consume=%d micro seconds\n", time_consume(start, end));
   
   return 0;
 }
