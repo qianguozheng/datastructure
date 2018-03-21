@@ -8,6 +8,7 @@ import (
 	"io/ioutil"
 	"bytes"
 	"compress/gzip"
+	"os"
 )
 
 type String string
@@ -30,6 +31,7 @@ func (th *timeHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 func (s *Struct) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte(s.Greeting + s.Punct + s.Who))
 }
+
 
 func (s String) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	//w.Write([]byte())
@@ -58,6 +60,33 @@ func (s String) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	
 }
 
+//// 接受http post请求，并且将数据内容写入文件里面
+func appendToFile(filename string, content []byte) error {
+	f, err := os.OpenFile(filename, os.O_WRONLY, 0644)
+	if err != nil{
+		fmt.Println("file create failed. err:"+err.Error())
+	} else {
+		n, _ := f.Seek(0, os.SEEK_END)
+		_, err = f.WriteAt(content, n)
+	}
+	defer f.Close()
+	return err
+}
+type Test string
+
+func (t Test) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("This is t Test /test")
+
+	result, err := ioutil.ReadAll(r.Body)
+	if err != nil{
+		fmt.Println("Receive failed")
+	}
+	r.Body.Close()
+	fmt.Println("Length=", len(result), result)
+	appendToFile("domainlist.log", result)
+	w.Write([]byte("OK"))
+}
+
 func main() {
 	fmt.Println("Hello World")
 
@@ -67,5 +96,7 @@ func main() {
 	http.Handle("/time", th)
 	http.Handle("/rest/gw/1.0/terminal/", String("Received terminal entity"))
 
-	log.Fatal(http.ListenAndServe("112.74.112.103:80", nil))
+	//log.Fatal(http.ListenAndServe("112.74.112.103:80", nil))
+	http.Handle("/domainlist", Test("/domainlist"))
+	log.Fatal(http.ListenAndServe("192.168.56.41:80", nil))
 }

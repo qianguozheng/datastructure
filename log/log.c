@@ -7,21 +7,38 @@
 #include <sys/time.h>
 #include <string.h>
 
-#define FILE_MAX_SIZE 1024*1024*5 //5M
+////////////////////////////////////////////////////////////////////////
+//#include "log.h"
+
+#define FILE_MAX_SIZE 100 //5M
 
 #if 1
 #define LOG_INIT(name) log_init(name)
-#define LOG(fmt, arg...) logw(fmt, ##arg)
+#define LOG(fmt, arg...) logw("%s(%d)"fmt, __FUNCTION__,__LINE__,##arg)
 #define LOG_CLOSE() log_close()
 #else
 #define LOG_INIT(name) fprintf(stderr, "No log file "#name"\n");
-#define LOG(fmt, arg...) fprintf(stderr, fmt, arg);
+#define LOG(fmt, arg...) fprintf(stderr, fmt, ##arg);
 #define LOG_CLOSE() 
 
 #endif
 
+int log_init(char *name);
+int log_close();
+int logw(char *logformat, ...);
 
-long get_file_size(char *filename){
+////////////////////////////////////////////////////////////////////////
+
+#if 0
+//log filename with xxx.log-2017021345 such as.., no number limit
+#define SUFFIX_TIME_FORMAT_LOG 1 
+#else
+//log with number limit
+//#define LOG_NUMBER 5
+//#define SUFFIX_NUMBER_LOG 1
+#endif
+
+static long get_file_size(char *filename){
 	long length = 0;
 	FILE *fp = NULL;
 	
@@ -37,67 +54,22 @@ long get_file_size(char *filename){
 	}
 	return length;
 }
-#if 0
-void get_local_time(char *buffer){
-	time_t rawtime;
-	struct tm* timeinfo;
-	
-	time(&rawtime);
-	timeinfo = localtime(&rawtime);
-	sprintf(buffer, "%04d-%02d-%02d %02d:%02d:%02d",
-	(timeinfo->tm_year+1900), timeinfo->tm_mon, timeinfo->tm_mday,
-	timeinfo->tm_hour, timeinfo->tm_min, timeinfo->tm_sec
-	);
-}
 
-
-void write_log_file(char *filename, long max_size, char *buffer, unsigned buf_size){
-	if (filename != NULL && buffer != NULL){
-		long length = get_file_size(filename);
-		
-		if (length > max_size){
-			unlink(filename);
-		}
-		
-		//write log
-		FILE *fp;
-		fp = fopen(filename, "at+");
-		if (NULL != fp){
-			char now[32];
-			memset(now, 0, sizeof(now));
-			get_local_time(now);
-			fwrite(now, strlen(now)+1, 1, fp);
-			fwrite(buffer, buf_size, 1, fp);
-			fclose(fp);
-			fp = NULL;
-		}
-	}
-}
-#endif
 ///////////// Design By Weeds guozhengqian0825@126.com ////////////
 #define MAX_LOG_BUF 2046
 FILE *fp = NULL;
 char g_buffer[MAX_LOG_BUF];
+char g_filename[128] = {'\0'};
+int g_rotate = 0;
+int g_file_number = 0;
 
 int log_init(char *name){
 	if (NULL != name){
-		long length = get_file_size(name);
 		
-		if (length > FILE_MAX_SIZE){
-			char new_name[256];
-			struct timespec ts = {0, 0};
-			struct tm vtm;
-			
-			memset(new_name, 0, sizeof(new_name));
-			//gettimeofday(&tv, NULL);
-			clock_gettime(CLOCK_REALTIME, &ts);
-			localtime_r(&ts.tv_sec, &vtm);
-			sprintf(new_name, "%s-%02d%02d%02d%02d%02d%02d", 
-					name, vtm.tm_year+1900, vtm.tm_mon+1, vtm.tm_mday, vtm.tm_hour, vtm.tm_min, vtm.tm_sec);
-			
-			rename(name, new_name);
+		if (0 == g_rotate){
+			memset(g_filename, 0, sizeof(g_filename));
+			sprintf(g_filename, "%s", name);
 		}
-		
 		fp = fopen(name, "at+");
 		if (NULL != fp){
 			fseek(fp, 0, SEEK_END);
@@ -115,15 +87,7 @@ int log_close(){
 	return 0;
 }
 
-int premakerstr_time(char *buf){
-#if 0
-	time_t now;
-	now = time(&now);
-	struct tm vtm;
-	localtime_r(&now, &vtm);
-	return snprintf(buf, MAX_LOG_BUF, "[%02d-%02d %02d:%02d:%02d] ", 
-		vtm.tm_mon+1, vtm.tm_mday, vtm.tm_hour, vtm.tm_min, vtm.tm_sec);
-#else
+static int premakerstr_time(char *buf){
 	struct timespec ts = {0, 0};
 	struct tm vtm;
 	//gettimeofday(&tv, NULL);
@@ -131,7 +95,6 @@ int premakerstr_time(char *buf){
 	localtime_r(&ts.tv_sec, &vtm);
 	return snprintf(buf, MAX_LOG_BUF, "[%02d-%02d %02d:%02d:%02d.%03ld] ", 
 		vtm.tm_mon+1, vtm.tm_mday, vtm.tm_hour, vtm.tm_min, vtm.tm_sec, ts.tv_nsec/1000000);
-#endif
 }
 
 int logw(char *logformat, ...){
@@ -154,6 +117,45 @@ int logw(char *logformat, ...){
 		fprintf(stderr, "%s", g_buffer);
 	}
 	else {
+		long length = get_file_size(g_filename);
+		
+		if (length > FILE_MAX_SIZE){
+			char new_name[256];
+#ifdef SUFFIX_TIME_FORMAT_LOG
+			struct timespec ts = {0, 0};
+			struct tm vtm;
+			
+			memset(new_name, 0, sizeof(new_name));
+			//gettimeofday(&tv, NULL);
+			clock_gettime(CLOCK_REALTIME, &ts);
+			localtime_r(&ts.tv_sec, &vtm);
+			sprintf(new_name, "%s-%02d%02d%02d%02d%02d%02d", 
+					g_filename, vtm.tm_year+1900, vtm.tm_mon+1, vtm.tm_mday, vtm.tm_hour, vtm.tm_min, vtm.tm_sec);
+#elif SUFFIX_NUMBER_LOG
+			memset(new_name, 0, sizeof(new_name));
+			sprintf(new_name, "%s.%d", g_filename, g_file_number++);
+			if (LOG_NUMBER <= g_file_number) {
+				g_file_number = 0;
+			}
+			
+			//if (access(new_name, F_OK) == 0) unlink(new_name);
+#else
+			//only one file
+			memset(new_name, 0, sizeof(new_name));
+			sprintf(new_name, "%s", g_filename);
+			if (access(new_name, F_OK) == 0) unlink(new_name);
+#endif
+			//rename(name, new_name);
+			fflush(fp);
+			fclose(fp);
+			
+			rename(g_filename, new_name);
+			
+			g_rotate = 1;
+			//open file descriptor
+			log_init(g_filename);
+		}
+		
 		if (1 == fwrite(g_buffer, size+prestrlen, 1, fp)){
 			fflush(fp);
 		}
@@ -162,6 +164,7 @@ int logw(char *logformat, ...){
 	return 0;
 }
 
+#if 1
 int main(int argc, char *argv[]){
 	//int i;
 	//for(i=0; i<10; i++){
@@ -171,12 +174,18 @@ int main(int argc, char *argv[]){
 	//	write_log_file("log.txt", FILE_MAX_SIZE, buffer, strlen(buffer));
 	//}
 	log_init("test.log");
-	logw("hello world\n");
+	logw("hello worldeeee\n");
+	logw("hello worldrrrrfg\n");
+	logw("hello worldddddddt\n");
+	logw("hello worldccaaa\n");
+	logw("hello worldaa\n");
+	logw("hello worldddt\n");
 	logw("hello worldxxxx, %s, %d, %c\n", "hello", 123, 't');
 	log_close();
 	
-	LOG_INIT("xxx.log");
-	LOG("Hello %s World, %d %f\n", "Rich", 123, 123.89);
-	LOG_CLOSE();
+	//LOG_INIT("xxx.log");
+	//LOG("Hello %s World, %d %f\n", "Rich", 123, 123.89);
+	//LOG_CLOSE();
 	return 0;
 }
+#endif

@@ -30,6 +30,17 @@ type VerificationData struct{
 	TcpLimit int `json:"tcpLimit"`
 	UdpLimit int `json:"udpLimit"`
 }
+type AutoPortalStop struct {
+	IOSEnable int `json:iOSEnable`
+	AndroidEnable int `json:androidEnable`
+	Ios []string `json:ios`
+	Android []string `json:android`
+}
+type ReqHdr struct {
+	Host []string `json:host`
+	Uri []string `json:uri`
+	UserAgent []string `json:userAgent`
+}
 
 type Verification struct {
 	Cmd string `json:"cmd"`

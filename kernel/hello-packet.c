@@ -39,11 +39,11 @@ unsigned int my_hook(unsigned int hooknum,
     const struct net_device *out,
     int (*okfn)(struct sk_buff *))  
 {
-    printk("Hello packet! ");
+    printk("Hello packet! hooknum=%u\n", hooknum);
     //printk("from %s to %s\n", in->name, out->name);
     unsigned char *iphdr = skb_network_header(skb);
     if(iphdr){
-	dump_addr(iphdr);
+		dump_addr(iphdr);
     }
     return NF_ACCEPT;
 }

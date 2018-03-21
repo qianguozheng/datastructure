@@ -1,0 +1,90 @@
+{
+  "code": "200",
+  "msg": "success",
+  "data": [
+    {
+      "name": "zhongshan_bgp",
+      "weight": 1,
+      "ips": [
+        "121.201.55.180"
+      ],
+      "services": [
+        {
+          "domain": "magicwifi.com.cn",
+          "ip": "121.201.55.180"
+        },
+        {
+          "domain": "r.magicwifi.com.cn",
+          "ip": "121.201.55.180"
+        },
+        {
+          "domain": "www.magicwifi.com.cn",
+          "ip": "121.201.55.180"
+        }
+      ]
+    },
+    {
+      "name": "zhongshan_mobile",
+      "weight": 1,
+      "ips": [
+        "183.232.2.4"
+      ],
+      "services": [
+        {
+          "domain": "magicwifi.com.cn",
+          "ip": "183.232.2.4"
+        },
+        {
+          "domain": "r.magicwifi.com.cn",
+          "ip": "183.232.2.4"
+        },
+        {
+          "domain": "www.magicwifi.com.cn",
+          "ip": "183.232.2.4"
+        }
+      ]
+    },
+    {
+      "name": "zhengjiang_bgp",
+      "weight": 1,
+      "ips": [
+        "112.73.85.203"
+      ],
+      "services": [
+        {
+          "domain": "magicwifi.com.cn",
+          "ip": "112.73.85.203"
+        },
+        {
+          "domain": "r.magicwifi.com.cn",
+          "ip": "112.73.85.203"
+        },
+        {
+          "domain": "www.magicwifi.com.cn",
+          "ip": "112.73.85.203"
+        }
+      ]
+    },
+    {
+      "name": "beijing_bgp",
+      "weight": 1,
+      "ips": [
+        "123.59.251.252"
+      ],
+      "services": [
+        {
+          "domain": "magicwifi.com.cn",
+          "ip": "123.59.251.252"
+        },
+        {
+          "domain": "r.magicwifi.com.cn",
+          "ip": "123.59.251.252"
+        },
+        {
+          "domain": "www.magicwifi.com.cn",
+          "ip": "123.59.251.252"
+        }
+      ]
+    }
+  ]
+}
