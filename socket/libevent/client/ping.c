@@ -10,23 +10,10 @@
 #include <sys/time.h>
 #include <arpa/inet.h>
 
+#include "ping.h"
+#include "log.h"
+
 //Refer to http://blog.csdn.net/yangzheng_yz/article/details/50593678
-
-#if 0
-#define ICMP_ECHOREPLY 0
-#define ICMP_ECHO
-
-#define BUFSIZE 1500
-#define DEFAULT_LEN 56
-
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-
-struct icmphdr{
-	
-}
-#endif
 
 
 #if defined(__BYTE_ORDER) && __BYTE_ORDER == __BIG_ENDIAN
@@ -63,7 +50,6 @@ enum {
 	PINGINTERVAL = 1, /* 1 second */
 	pingsock = 0,
 };
-
 
 uint16_t inet_cksum(uint16_t *addr, int nleft)
 {
@@ -114,19 +100,17 @@ struct sockaddr_in init_dest(char *ipaddr){
 	return dest;
 }
 
-double sendping(int sock, struct sockaddr_in dest){
+double sendping(struct sockaddr_in dest, int optlen){
 
 	char buf[512];
 	double rtt = -1;
 	int len;
 	
 	struct icmp *pkt;
+	int sock = create_icmp_socket();
+	//printf("sock=%d\n", sock);
 	
 	memset(buf, 0, sizeof(buf));
-	
-	//sock = create_icmp_socket();
-	printf("sock=%d\n", sock);
-
 	pkt = (struct icmp *)buf;
 	
 	gettimeofday((struct timeval *)pkt->icmp_data,NULL);
@@ -139,8 +123,8 @@ double sendping(int sock, struct sockaddr_in dest){
 	pkt->icmp_type = ICMP_ECHO;
 	pkt->icmp_cksum = inet_cksum((uint16_t *)pkt, sizeof(buf));
 
-	len = sendto(sock, buf, DEFDATALEN + ICMP_MINLEN + 64, 0, (struct sockaddr*)&dest, sizeof(dest));
-	printf("len=%d\n", len);
+	len = sendto(sock, buf, DEFDATALEN + ICMP_MINLEN + optlen, 0, (struct sockaddr*)&dest, sizeof(dest));
+	//printf("len=%d\n", len);
 
 	//receive
 	memset(buf, 0, sizeof(buf));
@@ -165,7 +149,7 @@ double sendping(int sock, struct sockaddr_in dest){
 		}
 		if (FD_ISSET(sock, &rset)){
 			int c = recv(sock, buf, sizeof(buf), 0);
-			printf("c=%d, errno=%d\n", c, errno);
+			//printf("c=%d, errno=%d\n", c, errno);
 			if (c < 0) {
 				if (errno != EINTR)
 				continue;
@@ -178,7 +162,7 @@ double sendping(int sock, struct sockaddr_in dest){
 				if (pkt->icmp_type == ICMP_ECHOREPLY &&
 					pkt->icmp_id == ICMP_ID &&
 					pkt->icmp_seq == ICMP_SEQ){
-					printf("get icmp reply, id=%d, seq=%d\n", pkt->icmp_id, pkt->icmp_seq);
+					//printf("get icmp reply, id=%d, seq=%d\n", pkt->icmp_id, pkt->icmp_seq);
 					sendtime = (struct timeval *)pkt->icmp_data;
 					
 					rtt = ((&recvtime)->tv_sec - sendtime->tv_sec) * 1000 + ((&recvtime)->tv_usec - sendtime->tv_usec)/1000.0;
@@ -188,40 +172,98 @@ double sendping(int sock, struct sockaddr_in dest){
 			}
 		}
 	} while(0);
-	//close(s);
+	close(sock);
 	
 	return rtt;
 }
 
-#define TEST_NUM 10
-
-double network_delay(char *host){
+result_array network_delay(char *host){
 	int sock;
 	struct sockaddr_in dest;
-	double arr[TEST_NUM], sum = 0;
+	double arr[PKT_LEN][TEST_NUM], sum = 0, avg = 0, min = 0, max = 0;
+	result_array ret;
+	int fail_cnt = 0;
 	
-	sock = create_icmp_socket();
-	
+	//sock = create_icmp_socket();
 	dest = init_dest(host);
 	
 	memset(arr, 0, sizeof(arr));
-	for (int i =0; i < TEST_NUM; i++){
-		arr[i] = sendping(sock, dest);
-		printf("Responsive=%lf\n", arr[i]);
-		sum += arr[i];
-		sleep(1);
+	memset(&ret, 0, sizeof(ret));
+	
+	int i=0, j=0;
+	for (i=0; i<PKT_LEN; i++) {
+		for (j =0; j < TEST_NUM; j++) {
+			//arr[i][j] = sendping(sock, dest, 0); //default: 64 + [ 0, 64, 192 ]
+			switch(i) {
+				case 0:
+					arr[i][j] = sendping(dest, 0);
+					break;
+				case 1:
+					arr[i][j] = sendping(dest, 64);
+					break;
+				case 2:
+					arr[i][j] = sendping(dest, 192);
+					break;
+				default:
+					break;
+			}
+			
+			//失败次数超过，则不上报这个mac
+			if (fail_cnt > 5) {
+				return ret;
+			}
+			//失败则返回-1
+			if (arr[i][j] < 0) {
+				fail_cnt++;
+			}
+			
+			printf("Responsive=%lf\n", arr[i][j]);
+			sum += arr[i][j];
+			if (j > 0) {
+				if (arr[i][j] > max) max = arr[i][j];
+				if (arr[i][j] < min) min = arr[i][j];
+			} else {
+				min = max = arr[i][j];
+			}
+			
+			sleep(1);
+		}
+		
+		//统计结果
+		avg = sum / TEST_NUM;
+		sum = 0;
+		switch(i) {
+			case 0:
+				ret.icmp[i].length = 0;
+				break;
+			case 1:
+				ret.icmp[i].length = 64;
+				break;
+			case 2:
+				ret.icmp[i].length = 128;
+				break;
+			default:
+				break;
+		}
+		ret.icmp[i].avg = avg;
+		ret.icmp[i].min = min;
+		ret.icmp[i].max = max;
+		printf("sock=%d [%d] max=%f min=%f avg=%f\n",sock, i, max, min, avg);
 	}
-	printf("Average time is %f\n", sum/TEST_NUM);
+	//printf("Average time is %f\n", sum/TEST_NUM);
 	
-	close(sock);
+	//close(sock);
 	
-	return sum/TEST_NUM;
+	return ret;
 }
 
 
+#if 0
 int main(){
 	
-	network_delay("112.74.112.103");
+	//network_delay("112.74.112.103");
+	network_delay("192.168.3.199");
 	
 	return 0;
 }
+#endif

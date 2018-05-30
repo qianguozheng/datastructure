@@ -35,6 +35,21 @@
 #define __u32	u_int32_t
 #endif
 
+#ifndef ICMP_MINLEN
+#define ICMP_MINLEN 8
+#endif
+
+
+enum {
+	DEFDATALEN = 56,
+	MAXIPLEN = 60,
+	MAXICMPLEN = 76,
+	MAX_DUP_CHK = (8 * 128),
+	MAXWAIT = 10,
+	PINGINTERVAL = 1, /* 1 second */
+	pingsock = 0,
+};
+
 /*
  * IP header
  */
@@ -202,6 +217,8 @@ void send_ip (char* src, char *dst, char *data, unsigned int datalen,
 	printf("IPHDR_SIZE=%d, optlen=%d, datalen=%d\n", IPHDR_SIZE, optlen, datalen);
 	
 	packetsize = IPHDR_SIZE + optlen + datalen;
+	printf("IPHDR_SIZE=%d, optlen=%d, datalen=%d\n",
+		IPHDR_SIZE, optlen, datalen);
 	if ( (packet = malloc(packetsize)) == NULL) {
 		perror("[send_ip] malloc()");
 		return;
@@ -283,6 +300,7 @@ void send_ip (char* src, char *dst, char *data, unsigned int datalen,
     }
 	result = sendto(sockraw, packet, packetsize, 0,
 		(struct sockaddr*)&remote, sizeof(remote));
+		printf("result=%d\n", result);
 	
 	printf("Result=%d\n", result);
 	if (result == -1 && errno != EINTR && !opt_rand_dest && !opt_rand_source) {
@@ -424,8 +442,8 @@ int main()
 	resolve((struct sockaddr*)&remote, "112.74.112.103");
 	printf(" dest=%s\n", inet_ntoa(remote.sin_addr));
 	
-	resolve((struct sockaddr*)&local, "192.168.202.102");
-	printf("src=%ss\n", inet_ntoa(local.sin_addr));
+	resolve((struct sockaddr*)&local, "192.168.0.189");
+	printf("src=%s\n", inet_ntoa(local.sin_addr));
 	printf(" dest=%s\n", inet_ntoa(remote.sin_addr));
 	
 	sockraw = open_sockraw();
@@ -439,8 +457,8 @@ int main()
 	while(1)
 	{
 		send_icmp_echo();
-		//read(sockraw, buff, 512);
-		//printf(buff);
+		read(sockraw, buff, 512);
+		printf(buff);
 		memset(buff, 0, 512);
 		sleep(1);
 	}

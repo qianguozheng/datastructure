@@ -161,8 +161,10 @@ int main(void) {
 	char buf[12];
 	char assigned[] = "aabbccddee00";
 	//char reset[] = "ffffffffffff";
-	int reset = 0;
+	//int reset = 0;
 	//char reset[] = "000000000000";
+	char reset[12];
+	memset(reset, 0, sizeof(reset));
 	memset(buf, 0, sizeof(buf));
 	int i=0, ret = 0;
 	
@@ -191,9 +193,7 @@ int main(void) {
 		
 		printf("Reset to Origing\n");
 		lseek(fd, 0x500, SEEK_SET);
-		ret = write(fd, &reset, 4);
-		ret += write(fd, &reset, 4);
-		ret += write(fd, &reset, 4);
+		ret = write(fd, reset, 12);
 		
 		lseek(fd, 0x500, SEEK_SET);
 		ret = read(fd, buf, 12);
