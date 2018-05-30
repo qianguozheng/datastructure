@@ -88,6 +88,7 @@ func Ping(host string, c chan int)  {
 
 		conn, err = net.DialTimeout("ip:icmp", host, time.Duration(timeout*1000*1000))
 		checkError(err)
+		defer conn.Close()
 
 		startTime = time.Now()
 		conn.SetDeadline(startTime.Add(time.Duration(timeout*1000*1000)))
