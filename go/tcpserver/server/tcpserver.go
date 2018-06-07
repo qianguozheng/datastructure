@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net"
+	"time"
 
 	"../proto"
 )
@@ -55,7 +56,7 @@ func connectionHandler(conn net.Conn) {
 	}
 	defer m(conn)
 
-	//talktoclients(conn)
+	//talktoclients(conn, "{\"result\":\"ok\"}")
 
 	for {
 		ibuf := make([]byte, MaxRead+1)
@@ -67,6 +68,7 @@ func connectionHandler(conn net.Conn) {
 			return
 		}
 		ibuf[MaxRead] = 0
+		fmt.Println("length=", length)
 
 		readerChannel := make(chan []byte, 16)
 
@@ -78,12 +80,19 @@ func connectionHandler(conn net.Conn) {
 		tmpBuffer = append(tmpBuffer, ibuf[:length]...)
 		for {
 			//tmpBuffer = proto.Unpack(append(tmpBuffer, ibuf[:length]...), readerChannel)
+<<<<<<< Updated upstream
 			tmpBuffer = proto.UnpackLemon3(tmpBuffer, readerChannel)
 			if len(tmpBuffer) > 0 {
 				//tmpBuffer = proto.Unpack(append(tmpBuffer, ibuf[:length]...), readerChannel)
 				//fmt.Println("length=", length)
 				//fmt.Println("tmpBuffer=", len(tmpBuffer))
 				tmpBuffer = proto.UnpackLemon3(tmpBuffer, readerChannel)
+=======
+			tmpBuffer = proto.UnpackLemon3(append(tmpBuffer, ibuf[:length]...), readerChannel)
+			if len(tmpBuffer) > 0 {
+				//tmpBuffer = proto.Unpack(append(tmpBuffer, ibuf[:length]...), readerChannel)
+				tmpBuffer = proto.UnpackLemon3(append(tmpBuffer, ibuf[:length]...), readerChannel)
+>>>>>>> Stashed changes
 			} else {
 				//fmt.Println("Stop UnPackLemon3")
 				break
@@ -174,9 +183,21 @@ func handleMsg(msg []byte) (string , uint32) {
 	return "{\"CMD\":\"OK\"}", 0
 }
 
+<<<<<<< Updated upstream
 func talktoclients(to net.Conn, msg string, cmdId uint32) {
 	//data := "Hello Client"
 	wrote, err := to.Write(proto.PacketLemon3([]byte(msg), cmdId))
+=======
+var count int
+
+func talktoclients(to net.Conn, msg string) {
+	//data := "Hello Client"
+	//wrote, err := to.Write(proto.Packet([]byte(msg)))
+	fmt.Println("Got here", count)
+	count = count + 1
+	time.Sleep(time.Second * 2)
+	wrote, err := to.Write(proto.PacketLemon3([]byte(msg), 0x03))
+>>>>>>> Stashed changes
 	checkError(err, "Write: wrote "+string(wrote)+" bytes.")
 	if (cmdId == proto.CmdKV["heartbeat"]){
 		//words := "{\"cmd\":\"login\",\"seqId\":\"1234321\",\"Message\":\"message\"}"

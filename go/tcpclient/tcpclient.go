@@ -20,14 +20,20 @@ func sendMessage() {
 	}
 
 	for {
+<<<<<<< Updated upstream
 		words := "{\"cmd\":\"login\",\"seqId\":\"1234321\",\"Message\":\"message\"}"
 		conn.Write(proto.PacketLemon3([]byte(words), 0x34))
+=======
+		words := "{\"Id\":1,\"Name\":\"golang\",\"Message\":\"message\"}"
+		//conn.Write(proto.Packet([]byte(words)))
+		conn.Write(proto.PacketLemon3([]byte(words), 0x002))
+>>>>>>> Stashed changes
 		fmt.Println("Send Data Already")
 
 		rbuf := make([]byte, MaxRead+1)
 		length, err := conn.Read(rbuf[0 : MaxRead+1])
 		if err != nil {
-			fmt.Println("Fuck reading ")
+			fmt.Println("Fuck reading ", err.Error)
 			return
 		}
 		rbuf[MaxRead] = 0
