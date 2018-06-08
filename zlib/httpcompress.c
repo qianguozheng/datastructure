@@ -106,7 +106,7 @@ char * httpcompress(const char *buffer, int* length)
 int main(){
 		int ziplen = 0;
 		//char *buf = httpcompress("{ \"mac\": \"a8803822d6ae\", \"seqId\": 0, \"bssid\": [ \"a8803822d6ac\" ] }hello333333111", &ziplen);
-		char *buf = httpcompress("{hello333333111ggggggggggggggggggggggggggggggggggg", &ziplen);
+		char *buf = httpcompress("{", &ziplen);
 		
 		FILE *fp = fopen("test.gz", "w");
 		if (fp) {
